@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Use the 'title' property to render a page title  -->
+	<title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+</head>
+<body>
+    <script>
+    function validateEmail(email)
+    {
+	    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+	    {
+		    return (true);
+	    }
+        alert("Please enter a valid email address!");
+	    document.getElementById("email").value="";
+        return (false);
+    }
+    </script>
+	
+    <div >
+        <form action="/feedback" method="post">
+            <div class="wrapper">
+                <!-- Use the 'title' property to render a title element  -->
+                <h2 class="jumbotron text-center">  <%= title %></h2>
+                <div class="container">
+                    <div>
+                        <label class="control-label"> Email:</label>
+                        <input type="text" placeholder="Enter your email" class="form-control" name="email" id="email" onchange="validateEmail(this.value)" required />
+                        <span class="help-block"></span>
+                    </div>
+                    <div>
+                        <label class="control-label">Password:</label>
+                        <input type="password" class="form-control" placeholder="Enter your password" name="password" required />
+                        <span class="help-block"></span>
+                    </div>
+                    &nbsp;
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block">Login</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div> 
+</body>
+</html>

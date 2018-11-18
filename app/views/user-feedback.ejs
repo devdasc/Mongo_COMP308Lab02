@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title><%= title %> </title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+</head>
+<body>
+    <!-- Load the static image file  -->
+   
+
+    <h2 class="jumbotron text-center"> List of Users</h2>
+    <div class="container-full">
+        <span><b><a href="http://localhost:3000">Logout</a></b></span>
+        <table class="center">
+            <tr>
+                <td>
+                    <div>
+                        <label class="control-label">First Name</label>
+                    </div>
+
+                </td>
+                <td>
+
+                    <div>
+                        <label class="control-label">Last Name</label>
+
+                    </div>
+
+                </td>
+                <td>
+                    <div>
+                        <label class="control-label">Address</label>
+                    </div>
+
+                </td>
+                <td>
+                    <div>
+                        <label class="control-label">Skill</label>
+                    </div>
+
+                </td>
+                <td>
+                    <div>
+                        <label class="control-label">Email</label>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label class="control-label">Role </label>
+                    </div>
+
+                </td>
+                <td>
+                    <div>
+                        <label class="control-label">Comment</label>
+                    </div>
+            </tr>
+
+
+            <% users.forEach(function(user){ %>
+
+            <tr>
+                <td>
+                    <div>
+
+                        <input type="text" class="form-control" name="firstname" value="<%= user.firstName %>" readonly />
+                    </div>
+
+                </td>
+                <td>
+                    <div>
+                        <input type="text" class="form-control" name="lastname" value="<%= user.lastName %>" readonly />
+                    </div>
+
+                </td>
+                <td>
+                    <div>
+                        <input type="text" class="form-control" name="email" value="<%= user.address %>" readonly />
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <input type="text" class="form-control" name="username" value="<%= user.skill %>" readonly />
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <input type="text" class="form-control" name="website" value="<%= user.email %>" readonly />
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <input type="text" class="form-control" name="role" value="<%= user.role %>" readonly />
+                    </div>
+                </td>
+
+                <td>
+                    <div>
+                        <input type="text" class="form-control" name="created" value="<%= user.comment %>" readonly />
+                    </div>
+                </td>
+
+
+            </tr>
+
+            <% })%>
+
+        </table>
+        
+    </div>
+</body>
+</html>
